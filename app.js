@@ -8,8 +8,7 @@ class App {
         this.ctx = this.canvas.getContext('2d');
         document.body.appendChild(this.canvas);
 
-        this.bird = new Bird();
-        this.bird.bird.draw
+        const bird = new Bird();
     }
 
     resize() {
@@ -24,4 +23,5 @@ class App {
 
 window.onload = () => {
     new App();
+
 };

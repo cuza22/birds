@@ -1,18 +1,16 @@
 export class Bird {
     constructor() {
-        this.bird = document.getElementById('bird');
+        this.img = document.getElementById('bird');
+        this.img.style.display = "block";
+        this.animate();
     }
 
-    draw(ctx, t, dots) {
-        this.animate(ctx, dots);
-    }
-
-    animate(ctx, dots) {
+    animate() {
         document.addEventListener("mousemove", (e) => {
             const mouseX = e.clientX;
             const mouseY = e.clientY;
-            this.bird.style.left = mouseX + 'px';
-            this.bird.style.top = mouseY + 'px';    
+            this.img.style.left = mouseX + 'px';
+            this.img.style.top = mouseY + 'px';    
         });
     }
 
