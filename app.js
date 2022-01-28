@@ -2,13 +2,20 @@ import {
     Bird
 } from './bird.js';
 
+const MAX_BIRDS = 20;
+
 class App {
     constructor() {
         this.canvas = document.createElement('canvas');
         this.ctx = this.canvas.getContext('2d');
         document.body.appendChild(this.canvas);
 
-        const bird = new Bird();
+        let birds = [];
+        document.addEventListener("click", (e) => {
+            if (birds.length > MAX_BIRDS) { return; }
+            const bird = new Bird(e.clientX, e.clientY);
+            birds.push(bird);
+        })
     }
 
     resize() {
@@ -23,5 +30,4 @@ class App {
 
 window.onload = () => {
     new App();
-
 };
